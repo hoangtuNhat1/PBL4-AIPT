@@ -64,8 +64,7 @@ If you only want to try the website, refer to the [web README](./web/README.md).
     pip install -r requirements.txt
     ```
 
-3. The **_[core](./core/README.md)_** folder contains the code for data processing and model training.
-4. The **_[web](./web/README.md)_** folder contains the code for the website.
+3. The **_[web](./Web/README.md)_** folder contains the code for the website.
 
 ## Usage
 
