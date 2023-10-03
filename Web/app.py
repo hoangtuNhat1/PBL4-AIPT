@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session, send_from_directory
 import os
-from process import deadlift, squat
+from process import deadlift, squat, bicep_curl, lunge, plank
 from static_remover import clear_folder
 from process import squat
 from down_res import reduce_video_quality
@@ -45,9 +45,15 @@ def upload():
         uploaded_file.save(file_path)
     
     if exercise == "deadlift":
-        deadlift(file_path)
+        session['out_path'], session['error_count'], session['total_error_count'] =  deadlift(file_path)
     elif exercise == "squat":
         session['out_path'], session['error_count'], session['total_error_count'] =  squat(file_path)
+    elif exercise == "bicep_curl":
+        session['out_path'], session['error_count'], session['total_error_count'] =  bicep_curl(file_path)
+    elif exercise == "lunge":
+        session['out_path'], session['error_count'], session['total_error_count'] =  lunge(file_path)
+    elif exercise == "plank":
+        session['out_path'], session['error_count'], session['total_error_count'] =  plank(file_path)
     reduce_video_quality(session['out_path'], 'static\\videos\\output_compress.mp4')
     session['out_path'] = 'static\\videos\\output_compress.mp4'
     return redirect(url_for('index'))
