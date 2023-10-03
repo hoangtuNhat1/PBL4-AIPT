@@ -1,5 +1,4 @@
 # PBL4: Exercise Correction
-
 ## About The Project
 
 Utilizing the power of Mediapipe’s pose detection, this project aims to analyze, detect, and classify the forms of fitness exercises. The goal is to develop five machine learning models for four common home exercises: Bicep Curl, Plank, Squat, Deadlift, and Lunge. Each model is designed to detect any form of incorrect movement while a person is performing the corresponding exercise. Additionally, a web application will be built to utilize these trained models for analyzing and providing feedback on workout videos.
