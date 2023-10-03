@@ -1,12 +1,24 @@
 # PBL4: Exercise Correction
 
-<p align="center">
-  <img src="images/project_logo.png" alt="Project Logo" width="150">
-</p>
-
 ## About The Project
 
 Utilizing the power of Mediapipe’s pose detection, this project aims to analyze, detect, and classify the forms of fitness exercises. The goal is to develop five machine learning models for four common home exercises: Bicep Curl, Plank, Squat, Deadlift, and Lunge. Each model is designed to detect any form of incorrect movement while a person is performing the corresponding exercise. Additionally, a web application will be built to utilize these trained models for analyzing and providing feedback on workout videos.
+
+-   Bicep Curl
+<p align="center"><img src="images/bicep_curl.gif" alt="Logo" width="70%"></p>
+
+-   Basic Plank
+<p align="center"><img src="images/plank.gif" alt="Logo" width="70%"></p>
+
+-   Basic Squat
+<p align="center"><img src="images/squat.gif" alt="Logo" width="70%"></p>
+
+-   Lunge
+<p align="center"><img src="images/lunge.gif" alt="Logo" width="70%"></p>
+
+-   Models' evaluation results and website screenshots [here](#usage)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
 
@@ -99,9 +111,6 @@ The web application is for demonstration purposes of all the trained models. Cur
 <p align="center">
   <img src="images/web_3.png" alt="Web Screenshot 3" width="70%">
 </p>
-<p align="center">
-  <img src="images/web_4.png" alt="Web Screenshot 4" width="70%">
-</p>
 
 ## Contributing
 
@@ -113,12 +122,7 @@ Contributions are welcome! If you have a suggestion to improve this project, ple
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
-
-Distributed under the MIT License.
-
 ## Acknowledgments
 
 - Inspiration from projects like [Pose Trainer](https://github.com/stevenzchen/pose-trainer), [Deep Learning Fitness Exercise Correction Keras](https://github.com/Vollkorn01/Deep-Learning-Fitness-Exercise-Correction-Keras), and [Posture](https://github.com/twixupmysleeve/Posture).
-- [Logo marker](https://www4.flamingtext.com/) for this project.
 - This awesome README template is from [Best README Template](https://github.com/othneildrew/Best-README-Template). ♥
