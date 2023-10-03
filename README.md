@@ -50,7 +50,7 @@ This section provides instructions on setting up the project locally.
 
 ### Installation
 
-If you only want to try the website, refer to the [web README](./web/README.md).
+If you only want to try the website, refer to the [web README](./Web/).
 
 1. Clone the repo and navigate to the project directory:
 
@@ -70,7 +70,7 @@ If you only want to try the website, refer to the [web README](./web/README.md).
 
 ### 1. Model Training
 
-For detailed information, refer to the [core README](core/README.md).
+For detailed information, refer to the [core README](README.md).
 
 #### Bicep Curl
 - _lean back error_: Confusion Matrix - ROC curve
