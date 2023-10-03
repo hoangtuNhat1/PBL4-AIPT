@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 import pickle
 import math 
-from static_remover import clear_folder
 # Drawing helpers
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
@@ -178,6 +177,7 @@ def squat(video_path) :
     cap = cv2.VideoCapture(video_path)
     output_path = 'static\\videos\\output.mp4'
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Codec for mp4 format
+    # out = cv2.VideoWriter(output_path, fourcc, fps, (int(cap.get(3)), int(cap.get(4))))
     out = cv2.VideoWriter(output_path, fourcc, 30, (int(cap.get(3)), int(cap.get(4))))
 
 # Counter vars
@@ -200,7 +200,6 @@ def squat(video_path) :
         frame_rate = cap.get(cv2.CAP_PROP_FPS)
         while cap.isOpened():
             ret, image = cap.read()
-
             if not ret:
                 break
             frame_number = int(cap.get(cv2.CAP_PROP_POS_FRAMES))
@@ -212,9 +211,9 @@ def squat(video_path) :
             # Recolor image from BGR to RGB for mediapipe
             image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
             image.flags.writeable = False
-
             results = pose.process(image)
             if not results.pose_landmarks:
+                # out.write(image)
                 continue
 
             # Recolor image from BGR to RGB for mediapipe
@@ -223,7 +222,6 @@ def squat(video_path) :
 
             # Draw landmarks and connections
             mp_drawing.draw_landmarks(image, results.pose_landmarks, mp_pose.POSE_CONNECTIONS, mp_drawing.DrawingSpec(color=(244, 117, 66), thickness=2, circle_radius=2), mp_drawing.DrawingSpec(color=(245, 66, 230), thickness=2, circle_radius=1))
-
             # Make detection
             try:
                 # * Model prediction for SQUAT counter
@@ -282,7 +280,6 @@ def squat(video_path) :
                 # Display knee and Shoulder width ratio
                 cv2.putText(image, "KNEE", (330, 12), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
                 cv2.putText(image, knee_placement, (325, 40), cv2.FONT_HERSHEY_COMPLEX, .7, (255, 255, 255), 2, cv2.LINE_AA)
-                # print(time)
                 if knee_placement_evaluation == 1:
                     if(time == last_error_time) :
                         continue
@@ -315,8 +312,11 @@ def squat(video_path) :
                 print(f"Error: {e}")
             out.write(image)
         out.release()
+
+# Giảm data rate và tổng bitrate
+
     total_error_count = sum(error_count.values())
-    return error_count, total_error_count
+    return output_path, error_count, total_error_count
 def deadlift(video_path) : 
     analyzed_results = {
      "torso": -1,
