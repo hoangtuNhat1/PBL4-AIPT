@@ -15,6 +15,9 @@ Utilizing the power of Mediapipe’s pose detection, this project aims to analyz
 -   Lunge
 <p align="center"><img src="images/lunge.gif" alt="Logo" width="70%"></p>
 
+-   Deadlift
+<p align="center"><img src="images/deadlift.gif" alt="Logo" width="70%"></p>
+
 -   Models' evaluation results and website screenshots [here](#usage)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
